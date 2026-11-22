@@ -7,18 +7,18 @@ set -x
 shopt -s expand_aliases
 alias sshg='ssh -A -o SendEnv="GIT*"'
 
-sshg -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedAlgorithms=+ssh-rsa ubuntu@192.168.0.11 'sudo apt update ; sudo apt install -y tree'
-sshg root@192.168.0.36 'sudo apt update ; sudo apt install -y tree'
-sshg root@192.168.0.33 'sudo apt update ; sudo apt install -y tree'
-sshg root@192.168.0.42 'sudo apt update ; sudo apt install -y tree'
-sshg root@192.168.0.52 'sudo apt update ; sudo apt install -y tree'
-sshg root@192.168.0.146 'sudo apt update ; sudo apt install -y tree'
-sshg root@192.168.0.119 'sudo apt update ; sudo apt install -y tree'
-sshg root@192.168.0.37 'sudo apt update ; sudo apt install -y tree'
-sshg root@192.168.0.38 'sudo apt update ; sudo apt install -y tree'
-sshg root@192.168.0.12 'sudo apt update ; sudo apt install -y tree'
-sshg root@192.168.0.16 'sudo apt update ; sudo apt install -y tree'
-sshg root@192.168.0.156 'sudo apt update ; sudo apt install -y tree'
-sshg root@192.168.0.44 'sudo apt update ; sudo apt install -y tree'
-sshg root@192.168.0.13 'sudo apt update ; sudo apt install -y tree'
-sshg root@192.168.0.210 'sudo apt update ; sudo apt install -y tree'
+sshg -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedAlgorithms=+ssh-rsa ubuntu@192.168.0.11 ./deploy-proxmox/update.sh
+sshg root@192.168.0.36 ./deploy-proxmox/update.sh
+sshg root@192.168.0.33 ./deploy-proxmox/update.sh
+sshg root@192.168.0.42 ./deploy-proxmox/update.sh
+sshg root@192.168.0.52 ./deploy-proxmox/update.sh
+sshg root@192.168.0.146 ./deploy-proxmox/update.sh
+sshg root@192.168.0.119 ./deploy-proxmox/update.sh
+sshg root@192.168.0.37 ./deploy-proxmox/update.sh
+sshg root@192.168.0.38 ./deploy-proxmox/update.sh
+sshg root@192.168.0.12 ./deploy-proxmox/update.sh
+sshg root@192.168.0.16 ./deploy-proxmox/update.sh
+sshg root@192.168.0.156 ./deploy-proxmox/update.sh
+sshg root@192.168.0.44 ./deploy-proxmox/update.sh
+sshg root@192.168.0.13 ./deploy-proxmox/update.sh
+sshg root@192.168.0.210 ./deploy-proxmox/update.sh

@@ -45,7 +45,7 @@ La même commande distante est utilisée sur tous les serveurs.
 - Valider les arguments et afficher des erreurs compréhensibles pour un fichier absent, un CSV invalide, un JSON invalide ou une commande distante manquante/invalide. Accepter les commandes inline contenant des espaces et des opérateurs shell, et les transmettre comme une seule commande distante.
 - Ne pas exécuter automatiquement `start-updates.sh` après sa génération.
 - Générer un script lisible, avec un shebang Bash. Le script doit définir l’alias `sshg='ssh -A -o SendEnv="GIT*"'` et activer l’expansion des alias Bash (`shopt -s expand_aliases`) avant les commandes générées, afin que les valeurs `ssh1String` utilisant `sshg` fonctionnent dans le script non interactif.
-- Activer le mode debug Bash (`set -x`) afin d’afficher les commandes avant leur exécution. Arrêter le script dès qu’une commande échoue (`set -e`) et afficher clairement la ligne et le code de sortie de l’erreur.
+- Activer le mode debug Bash (`set -x`, qui écrit sur la sortie d’erreur) pour tracer les commandes. Arrêter le script dès qu’une commande échoue (`set -e`) et afficher clairement la ligne et le code de sortie de l’erreur.
 - Rendre le script exécutable si cela est approprié.
 - Éviter les dépendances externes si la bibliothèque standard Python suffit.
 - Ajouter ou mettre à jour les tests et la documentation d’utilisation selon les conventions déjà présentes dans le dépôt.
