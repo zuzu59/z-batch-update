@@ -34,8 +34,10 @@ def parse_ssh_command(ssh1_string):
         tokens = shlex.split(ssh1_string)
     except ValueError:
         return None
-    if not tokens or not any(DESTINATION_RE.fullmatch(token) for token in tokens):
+    if not tokens or tokens[0] not in {"ssh", "sshg"} or not any(DESTINATION_RE.fullmatch(token) for token in tokens):
         return None
+    if not any(token in {"-t", "-tt"} for token in tokens[1:]):
+        tokens.insert(1, "-t")
     return shlex.join(tokens)
 
 

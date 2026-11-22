@@ -33,7 +33,7 @@ La même commande distante est utilisée sur tous les serveurs.
 
 - Lire les données CSV et décoder les champs structurés si le format de l’inventaire en utilise.
 - Filtrer d’abord les enregistrements : ne traiter que ceux dont `tagIds` contient la valeur numérique `6` (et non une simple sous-chaîne ou une valeur différente).
-- Pour les enregistrements retenus, récupérer l’intégralité de `ssh1String` et l’utiliser comme commande SSH, en préservant la commande, les options et la destination. Le CSV peut nécessiter le décodage de champs structurés pour accéder à cette valeur.
+- Pour les enregistrements retenus, récupérer l’intégralité de `ssh1String` et l’utiliser comme commande SSH, en préservant la commande, les options et la destination. Ajouter l’option `-t` immédiatement après `ssh` ou `sshg` afin d’allouer un terminal interactif, sans la dupliquer si elle est déjà présente. Le CSV peut nécessiter le décodage de champs structurés pour accéder à cette valeur.
 - Ignorer proprement les enregistrements qui ne contiennent pas assez d’informations pour construire une destination SSH ; signaler combien ont été ignorés et pourquoi, sans afficher de données sensibles.
 - Ne jamais utiliser ni écrire dans le script généré les mots de passe, données chiffrées ou autres secrets présents dans l’inventaire.
 - Vérifier le format réel de `ssh1String` et préserver son contenu complet dans la commande générée. Citer ou analyser les éléments de façon sûre sans supprimer la commande, les options ou la destination.
